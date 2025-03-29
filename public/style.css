@@ -31,6 +31,11 @@ body {
     margin: 5px 0;
     border-radius: 3px;
 }
+#name{
+    width: 300px;
+    border-radius: 5px;
+
+}
 
 form {
     display: flex;
@@ -60,4 +65,14 @@ button:hover {
 #chatDiv {
     border: solid;
     width: 500px;
+    height: 700px;
+    justify-content: center;
+}
+
+#message{
+    width: 300px;
+    border-radius: 5px;
+}
+#stream{
+    border: solid 1px black;
 }

@@ -20,7 +20,7 @@
     <div id="chat-box"></div>
     
     <input id="name" type="text" placeholder="Enter your name" required>
-    <button id="nameSet" onclick="setName()">Set Name</button>
+    <button id="nameSet" onclick="setName()">Set</button>
 
     <br>
 
@@ -81,6 +81,11 @@
             chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to latest message
         }
     </script>
+    </div>
+
+    <div id="Stream">
+        <h1> Stream Here</h1>
+        <iframe src="http://localhost:4001" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 </body>
 
