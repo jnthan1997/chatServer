@@ -63,16 +63,18 @@ button:hover {
 }
 
 #chatDiv {
-    border: solid;
     width: 500px;
     height: 700px;
     justify-content: center;
+    padding-left: 10px;
 }
 
 #message{
     width: 300px;
     border-radius: 5px;
 }
-#stream{
+#Stream{
     border: solid 1px black;
+    height: 600px;
+    margin-left: 10px;
 }

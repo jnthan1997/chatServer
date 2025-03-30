@@ -15,6 +15,7 @@ app.use(express.static('public'));
 const mongoUser = process.env.MONGO_USER;
 const mongoPassword = process.env.MONGO_PASSWORD;
 const mongoHost = process.env.MONGO_HOST || 'mongodb';
+const webhost = process.env.WEB_HOST;
 
 // Connect to MongoDB
 mongoose.connect(`mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}:27017/chatDB`, {
@@ -96,6 +97,6 @@ io.on('connection', async (socket) => {
     });
 });
 
-server.listen(4000, () => {
-    console.log('Server running on http://localhost:4000');
+server.listen(3001, () => {
+    console.log('Server running on http://localhost:3001');
 });
