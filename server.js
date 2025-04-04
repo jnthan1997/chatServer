@@ -15,15 +15,19 @@ app.use(express.static('public'));
 const mongoUser = process.env.MONGO_USER;
 const mongoPassword = process.env.MONGO_PASSWORD;
 const mongoHost = process.env.MONGO_HOST || 'mongodb';
-const webhost = process.env.WEB_HOST;
+const apiURL = process.env.API_URL;
 
 // Connect to MongoDB
-mongoose.connect(`mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}:27017/chatDB`, {
+mongoose.connect(`mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}:27017/chatDB?authSource=admin'`, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
     authSource: "admin" // Ensure authentication is done using the correct database
-});
+}).then(() => console.log("MongoDB connected successfully"))
+.catch(err => console.error("MongoDB connection error:", err));
 
+
+app.get('/api/config', (req, res) => {
+    res.json({ apiUrl: process.env.API_URL || 'http://localhost:4001' });
+});
 
 
 // Define message schema
